@@ -6,7 +6,7 @@
 /*   By: jmbolana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 11:20:37 by jmbolana          #+#    #+#             */
-/*   Updated: 2026/01/27 14:21:30 by jmbolana         ###   ########.fr       */
+/*   Updated: 2026/01/27 14:46:37 by jmbolana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,3 +15,4 @@
 size_t		ft_strlen(const char *str);
 size_t		ft_strlcat(char *dest, const char *src, size_t size);
 void		*ft_memchr(const void	*s, int c, size_t n);
+int			ft_memcmp(const void *s1, const void *s2, size_t n);
