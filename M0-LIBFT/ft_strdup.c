@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmbolana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/27 11:20:57 by jmbolana          #+#    #+#             */
-/*   Updated: 2026/01/30 09:48:56 by jmbolana         ###   ########.fr       */
+/*   Created: 2026/01/30 09:36:45 by jmbolana          #+#    #+#             */
+/*   Updated: 2026/01/30 09:47:36 by jmbolana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+char	*ft_strdup(const char *s)
 {
-	size_t	i;
+	char	*n;
+	int 	i;
+	size_t	size;
 
+	size = ft_strlen(s);
+	n = malloc(sizeof(char) * (size + 1));
+	if (n == NULL)
+		return (NULL);
 	i = 0;
-	while (str[i] != '\0')
+	while (s[i] != '\0')
+	{
+		n[i] = s[i];
 		i++;
-	return (i);
+	}
+	n[i] = '\0';
+	return (n);
 }
