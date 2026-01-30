@@ -6,7 +6,7 @@
 /*   By: jmbolana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 09:01:05 by jmbolana          #+#    #+#             */
-/*   Updated: 2026/01/30 09:31:09 by jmbolana         ###   ########.fr       */
+/*   Updated: 2026/01/30 10:25:07 by jmbolana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	char	*s;
 
-	if (!(s = malloc(nmemb * size)))
+	s = malloc(nmemb * size);
+	if (!(s))
 		return (0);
 	ft_bzero(s, nmemb * size);
 	return (s);

@@ -6,7 +6,7 @@
 /*   By: jmbolana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 09:36:45 by jmbolana          #+#    #+#             */
-/*   Updated: 2026/01/30 09:47:36 by jmbolana         ###   ########.fr       */
+/*   Updated: 2026/01/30 10:29:04 by jmbolana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strdup(const char *s)
 {
 	char	*n;
-	int 	i;
+	int		i;
 	size_t	size;
 
 	size = ft_strlen(s);

@@ -6,11 +6,12 @@
 /*   By: jmbolana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 11:20:37 by jmbolana          #+#    #+#             */
-/*   Updated: 2026/01/30 09:00:51 by jmbolana         ###   ########.fr       */
+/*   Updated: 2026/01/30 10:22:52 by jmbolana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
+#include <stdlib.h>
 
 size_t		ft_strlen(const char *str);
 size_t		ft_strlcat(char *dest, const char *src, size_t size);
@@ -22,3 +23,4 @@ int			ft_isdigit(int c);
 int			ft_atoi(const char *nptr);
 char		*ft_strchr(const char *s, int c);
 char		*ft_strrchr(const char *s, int c);
+char		*ft_substr(char const *s, unsigned int start, size_t len);
