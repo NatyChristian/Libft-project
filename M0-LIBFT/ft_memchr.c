@@ -6,12 +6,11 @@
 /*   By: jmbolana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 14:00:49 by jmbolana          #+#    #+#             */
-/*   Updated: 2026/01/27 14:27:58 by jmbolana         ###   ########.fr       */
+/*   Updated: 2026/01/31 08:35:32 by jmbolana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stddef.h>
 /*#include <stdio.h>
 
 int	main(void)
@@ -21,7 +20,7 @@ int	main(void)
 
 	char *d = ft_memchr(s,c,ft_strlen(s)-1);
 
-	printf("%p\n", d);
+	printf("%p %c : %p %c\n", d, *d,  &s[12], s[12]);
 	return (0);
 }*/
 

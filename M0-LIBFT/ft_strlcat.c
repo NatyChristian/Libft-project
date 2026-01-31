@@ -6,15 +6,12 @@
 /*   By: jmbolana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 11:11:35 by jmbolana          #+#    #+#             */
-/*   Updated: 2026/01/27 11:39:21 by jmbolana         ###   ########.fr       */
+/*   Updated: 2026/01/31 08:43:14 by jmbolana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stddef.h>
 /*#include <stdio.h>
-
-size_t	ft_strlcat(char *dest, const char *src, size_t size);
 
 int	main(void)
 {

@@ -1,24 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmbolana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/30 09:01:05 by jmbolana          #+#    #+#             */
-/*   Updated: 2026/01/31 08:31:26 by jmbolana         ###   ########.fr       */
+/*   Created: 2026/01/24 17:05:25 by jmbolana          #+#    #+#             */
+/*   Updated: 2026/01/31 08:31:20 by jmbolana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stddef.h>
 #include "libft.h"
-
-void	*ft_calloc(size_t nmemb, size_t size)
+/*#include <stdio.h>
+int	main(void)
 {
-	char	*s;
+	char a[10] = "aaaaaaaaaa";
+	printf("%s\n", a);
+	ft_bzero(a, 10);
+	printf("%s--\n", a);
+	ft_memset(a, 'c',10);
+	printf("%s", a);
+	return (0);
+}
+*/
 
-	s = malloc(nmemb * size);
-	if (!(s))
-		return (0);
-	ft_bzero(s, nmemb * size);
-	return (s);
+void	ft_bzero(void *s, size_t n)
+{
+	size_t			i;
+	unsigned char	*ptr;
+
+	i = 0;
+	ptr = (unsigned char *)s;
+	while (i < n)
+		ptr[i++] = '\0';
 }

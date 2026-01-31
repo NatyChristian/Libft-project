@@ -6,12 +6,11 @@
 /*   By: jmbolana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 14:48:59 by jmbolana          #+#    #+#             */
-/*   Updated: 2026/01/27 15:28:11 by jmbolana         ###   ########.fr       */
+/*   Updated: 2026/01/31 08:45:59 by jmbolana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stddef.h>
 /*#include <stdio.h>
 
 int	main(void)

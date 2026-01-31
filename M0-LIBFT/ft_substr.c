@@ -6,14 +6,12 @@
 /*   By: jmbolana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 10:18:58 by jmbolana          #+#    #+#             */
-/*   Updated: 2026/01/30 10:28:17 by jmbolana         ###   ########.fr       */
+/*   Updated: 2026/01/31 08:48:33 by jmbolana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 /*#include <stdio.h>
-
-char	*ft_substr(char const *s, unsigned int  start, size_t len);
 
 int	main(void)
 {

@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmbolana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/30 09:01:05 by jmbolana          #+#    #+#             */
-/*   Updated: 2026/01/31 08:31:26 by jmbolana         ###   ########.fr       */
+/*   Created: 2026/01/24 13:42:21 by jmbolana          #+#    #+#             */
+/*   Updated: 2026/01/24 15:00:30 by jmbolana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*#include <stdio.h>*/
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+/*int	main(void)
 {
-	char	*s;
-
-	s = malloc(nmemb * size);
-	if (!(s))
-		return (0);
-	ft_bzero(s, nmemb * size);
-	return (s);
+	int a = 0;
+	while (++a < 123)
+		printf("%c: %d\n", a, ft_isalpha(a));
+	return (0);
+}*/
+int	ft_isalpha(int c)
+{
+	return (
+		(c >= 65 && c <= 90)
+		|| (c >= 97 && c <= 122)
+	);
 }
