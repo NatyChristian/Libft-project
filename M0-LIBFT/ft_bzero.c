@@ -6,11 +6,10 @@
 /*   By: jmbolana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 17:05:25 by jmbolana          #+#    #+#             */
-/*   Updated: 2026/01/31 08:31:20 by jmbolana         ###   ########.fr       */
+/*   Updated: 2026/01/31 19:04:20 by jmbolana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
 #include "libft.h"
 /*#include <stdio.h>
 int	main(void)
@@ -33,5 +32,5 @@ void	ft_bzero(void *s, size_t n)
 	i = 0;
 	ptr = (unsigned char *)s;
 	while (i < n)
-		ptr[i++] = '\0';
+		ptr[i++] = 0;
 }
