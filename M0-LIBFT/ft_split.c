@@ -3,110 +3,113 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmbolana <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jmbolana <jmbolana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/31 16:35:49 by jmbolana          #+#    #+#             */
-/*   Updated: 2026/02/01 14:10:52 by jmbolana         ###   ########.fr       */
+/*   Created: 2026/02/03 18:04:50 by jmbolana          #+#    #+#             */
+/*   Updated: 2026/02/03 19:23:30 by jmbolana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/*#include <stdio.h>*/
+#include <stdlib.h>
+/*
+#include    <stdio.h>*/
 
-static unsigned int	cnt_wrds(char const *s, char c);
-static unsigned int	mem_len(char const *s, char c);
-static char			**free_tab(char **s, int n);
+size_t	count_wrds(char const *s, char c);
+size_t	cnt_tok(char const *s, char c);
+void	*free_mem(char **s, int size);
 
-/*int	main(void)
+/*int main(void)
 {
-	char	*s =	"AAAAA--BSWFQLM--KMHVKLO--UFKOCPEDFR"
-			"-GNGLZUTER-ABSHNABIZUOUYPC-APITHUIS"
-			"BRJZB-ZNESMECBGU-QKFVYIMFXOA-XGKAOT-";
-	char	c = '-';
-	char	**tab = ft_split(s, c);
-	int i = 0;
-	while (tab[i] != NULL)
+	char	**str;
+	char	*s;
+	char	c;
+	size_t	i;
+
+	s = "";
+	c = 'z';
+	str = ft_split(s,c);
+	i = 0;
+	while (i < count_wrds(s,c))
 	{
-		printf("[%d] : %s\n", i + 1, tab[i]);
+		printf("[%lu] : %s\n", i + 1, str[i]);
 		i++;
 	}
 	return (0);
 }
 */
-static unsigned int	cnt_wrds(char const *s, char c)
-{
-	unsigned int	count;
-	unsigned int	i;
-
-	if (!s)
-		return (0);
-	i = 0;
-	count = 0;
-	while (s[i] != '\0')
-	{
-		if (i > 0 && s[i] != c && s[i - 1] == c)
-			count++;
-		i++;
-	}
-	if (s[0] != c)
-		count++;
-	return (count);
-}
-
-static unsigned int	mem_len(char const *s, char c)
-{
-	unsigned int	count;
-	unsigned int	i;
-
-	if (!s)
-		return (0);
-	i = 0;
-	while (s[i] == c)
-		i++;
-	count = 0;
-	while (s[i] && s[i] != c)
-	{
-		count++;
-		i++;
-	}
-	return (count);
-}
-
 char	**ft_split(char const *s, char c)
 {
-	unsigned int	i;
-	unsigned int	j;
-	unsigned int	len;
-	char			**tab;
+	size_t	wrds;
+	char	**tab;
+	size_t	i;
+	size_t	j;
 
 	if (!s)
 		return (NULL);
-	tab = (char **)ft_calloc(sizeof(char *), cnt_wrds(s, c) + 1);
+	wrds = count_wrds(s, c);
+	tab = malloc(sizeof(char *) * (wrds + 1));
 	if (!tab)
 		return (NULL);
 	i = 0;
 	j = 0;
-	while (j < cnt_wrds(s, c))
+	while (i < wrds)
 	{
-		while (s[i] && s[i] == c)
-			i++;
-		len = mem_len(&s[i], c);
-		tab[j] = ft_substr(s, i, len);
-		if (!tab[j])
-			return (free_tab(tab, j - 1));
-		i += len;
-		j++;
+		while (s[j] == c)
+			j++;
+		tab[i] = ft_substr(s, (unsigned int)j, cnt_tok(&s[j], c));
+		if (!tab[i])
+			return (free_mem(tab, (int)i));
+		i++;
+		j += cnt_tok(&s[j], c);
 	}
+	tab[i] = NULL;
 	return (tab);
 }
 
-static char	**free_tab(char **s, int n)
+size_t	count_wrds(char const *s, char c)
 {
-	while (n >= 0)
+	unsigned int	i;
+	size_t			count;
+
+	i = 0;
+	while (s[i] && s[i] != c)
+		i++;
+	count = 0;
+	while (s[i])
 	{
-		free(s[n - 1]);
-		n--;
+		if (i > 0 && s[i] == c && s[i - 1] != c)
+			count++;
+		i++;
 	}
-	free(s);
+	if (i > 0 && s[i - 1] != c)
+		count++;
+	return (count);
+}
+
+size_t	cnt_tok(char const *s, char c)
+{
+	size_t	i;
+	size_t	cnt;
+
+	i = 0;
+	while (s[i] == c)
+		i++;
+	cnt = 0;
+	while (s[i] && s[i] != c)
+	{
+		cnt++;
+		i++;
+	}
+	return (cnt);
+}
+
+void	*free_mem(char **s, int size)
+{
+	int	i;
+
+	i = 0;
+	while (i < size)
+		free(s[i++]);
 	return (NULL);
 }
