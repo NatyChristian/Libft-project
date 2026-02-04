@@ -3,59 +3,48 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmbolana <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: Jmbolana <jmbolana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/29 19:37:33 by jmbolana          #+#    #+#             */
-/*   Updated: 2026/02/01 13:49:53 by jmbolana         ###   ########.fr       */
+/*   Created: 2026/02/04 10:15:50 by Jmbolana          #+#    #+#             */
+/*   Updated: 2026/02/04 10:45:18 by Jmbolana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "libft.h"
+/*#include <stdio.h>
 
-/*#include <stdio.h>*/
-
-static int	ft_isspace(const char c);
-
-/*int	main(void)
+int	main(void)
 {
-	char	*c;
-	int		d;
+	char *c = "			    +---2147483647";
 
-	c = "-2147483647";
-	d = ft_atoi(c);
+	int	d = ft_atoi(c);
 	printf("%d", d);
 	return (0);
-}
-*/
+}*/
+
 int	ft_atoi(const char *nptr)
 {
-	unsigned int	i;
-	int				s;
-	int				vals;
+	int	s;
+	int	vals;
+	int	i;
 
-	i = 0;
 	s = 1;
-	while (ft_isspace(nptr[i]))
-		i++;
-	if (nptr[i] != '-' && nptr[i] != '+' && !ft_isdigit(nptr[i]))
-		return (0);
-	if (nptr[i] == '-')
-	{
-		s = -1;
-		i++;
-	}
-	else if (nptr[i] == '+')
-	{
-		s = 1;
-		i++;
-	}
+	i = 0;
 	vals = 0;
-	while (nptr[i] && ft_isdigit(nptr[i]))
-		vals = vals * 10 + nptr[i++] - '0';
+	while ((nptr[i] >= 9 && nptr[i] <= 13)
+		|| nptr[i] == 32)
+		i++;
+	while (nptr[i] == '+' || nptr[i] == '-')
+	{
+		if (nptr[i] == '-')
+			s *= -1;
+		i++;
+	}
+	while (ft_isdigit(nptr[i]))
+	{
+		vals = vals * 10 + nptr[i] - '0';
+		i++;
+	}
 	return (vals * s);
-}
-
-static int	ft_isspace(const char c)
-{
-	return ((c >= 9 && c <= 13) || c == 32);
 }
