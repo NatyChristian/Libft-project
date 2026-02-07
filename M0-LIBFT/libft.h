@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Jmbolana <jmbolana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jmbolana <jmbolana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/31 08:02:19 by jmbolana          #+#    #+#             */
-/*   Updated: 2026/02/06 21:15:49 by Jmbolana         ###   ########.fr       */
+/*   Updated: 2026/02/07 08:49:17 by jmbolana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 size_t	ft_strlcat(char *dest, const char *src, size_t size);
 size_t	ft_strlcpy(char *destination, const char *source, size_t size);
 size_t	ft_strlen(const char *str);

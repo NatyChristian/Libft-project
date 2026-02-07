@@ -6,7 +6,7 @@
 /*   By: Jmbolana <jmbolana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/06 20:56:29 by Jmbolana          #+#    #+#             */
-/*   Updated: 2026/02/06 20:56:29 by Jmbolana         ###   ########.fr       */
+/*   Updated: 2026/02/07 08:30:43 by jmbolana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
-	write(fd, c, 1);
+	write(fd, &c, 1);
 }

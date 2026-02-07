@@ -3,25 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Jmbolana <jmbolana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jmbolana <jmbolana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 15:31:36 by jmbolana          #+#    #+#             */
-/*   Updated: 2026/02/04 11:13:22 by Jmbolana         ###   ########.fr       */
+/*   Updated: 2026/02/07 09:19:14 by jmbolana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/*#include <stdio.h>
+// #include <stdio.h>
 
-int	main(void)
-{
-	char *s1 = "MBOLA(ANTENAINA";
-	char *s2 = "MBOLAN";
-	int    d = ft_strncmp(s1, s2, 5);
+// int	ft_strncmp(const char *s1, const char *s2, size_t n);
 
-	printf("%d\n", d);
-	return (0);
-}*/
+// int	main(void)
+// {
+// 	char *s1 = "test\200";
+// 	char *s2 = "test\0";
+// 	int    d = ft_strncmp(s1, s2, 6);
+
+// 	printf("%d\n", d);
+// 	return (0);
+// }
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
@@ -30,8 +32,14 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	if (n == 0)
 		return (0);
 	i = 0;
-	while (i < n && s1[i] && s2[i]
-		&& s1[i] == s2[i])
-		i++;
+	while (s1[i] && s2[i] && i < n)
+	{
+		if (s1[i] != s2[i])
+			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+		else
+			i++;
+	}
+	if (i == n && i > 0)
+		return ((unsigned char)s1[i - 1] - (unsigned char)s2[i - 1]);
 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
