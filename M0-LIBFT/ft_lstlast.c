@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmbolana <jmbolana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/07 15:23:22 by jmbolana          #+#    #+#             */
-/*   Updated: 2026/02/07 16:04:39 by jmbolana         ###   ########.fr       */
+/*   Created: 2026/02/07 15:57:30 by jmbolana          #+#    #+#             */
+/*   Updated: 2026/02/07 16:04:56 by jmbolana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 // #include <stdio.h>
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+t_list	*ft_lstlast(t_list *lst)
 {
-	if (!lst || !new)
-		return ;
-	new -> next = *lst;
-	*lst = new;
+	while (lst)
+	{
+		if (lst -> next == NULL)
+			return (lst);
+		lst = lst -> next;
+	}
+	return (NULL);
 }
-
 // static void	print_list(t_list *lst)
 // {
 // 	while (lst)
@@ -36,18 +38,41 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 // {
 // 	int value1 = 42;
 // 	int value2 = 99;
+// 	int value3 = 1;
+// 	int value4 = 4;
+// 	int value5 = 9;
+// 	int value6 = 10;
+// 	int value7 = 909;
+// 	int value8 = 467;
+// 	int value9 = 8942;
 
 // 	t_list *lst = NULL;
 
 // 	t_list *node1 = ft_lstnew(&value1);
 // 	t_list *node2 = ft_lstnew(&value2);
+// 	t_list *node3 = ft_lstnew(&value3);
+// 	t_list *node4 = ft_lstnew(&value4);
+// 	t_list *node5 = ft_lstnew(&value5);
+// 	t_list *node6 = ft_lstnew(&value6);
+// 	t_list *node7 = ft_lstnew(&value7);
+// 	t_list *node8 = ft_lstnew(&value8);
+// 	t_list *node9 = ft_lstnew(&value9);
 
+// 	ft_lstadd_front(&lst, node9);
+// 	ft_lstadd_front(&lst, node8);
+// 	ft_lstadd_front(&lst, node7);
+// 	ft_lstadd_front(&lst, node6);
+// 	ft_lstadd_front(&lst, node5);
+// 	ft_lstadd_front(&lst, node4);
+// 	ft_lstadd_front(&lst, node3);
 // 	ft_lstadd_front(&lst, node2);
 // 	ft_lstadd_front(&lst, node1);
 
 // 	printf("Linked List after adding elements to the front:\n");
 // 	print_list(lst);
 
+// 	printf("The last list is: \n");
+// 	print_list(ft_lstlast(lst));
 // 	free(node1);
 // 	free(node2);
 
