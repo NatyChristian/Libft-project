@@ -6,7 +6,7 @@
 #    By: jmbolana <jmbolana@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/01 11:07:57 by jmbolana          #+#    #+#              #
-#    Updated: 2026/02/07 16:21:47 by jmbolana         ###   ########.fr        #
+#    Updated: 2026/02/07 16:30:37 by jmbolana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,8 +21,9 @@ SRC = ft_atoi.c\
       ft_isdigit.c\
       ft_isprint.c\
       ft_itoa.c\
-	  ft_lstadd_back\
-	  ft_lstadd_front\
+	  ft_lstadd_back.c\
+	  ft_lstadd_front.c\
+	  ft_lstclear.c
 	  ft_lstdelone\
       ft_lstnew.c\
       ft_memchr.c\
