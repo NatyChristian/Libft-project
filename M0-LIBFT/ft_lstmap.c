@@ -1,46 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmbolana <jmbolana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/24 19:01:11 by jmbolana          #+#    #+#             */
-/*   Updated: 2026/02/07 17:37:03 by jmbolana         ###   ########.fr       */
+/*   Created: 2026/02/07 17:07:59 by jmbolana          #+#    #+#             */
+/*   Updated: 2026/02/07 18:41:43 by jmbolana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/*#include <stdio.h>
 
-int	main(void)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	char source[10] = "Natymblkkk";
-	char dest[10];
+	t_list	*new_list;
+	t_list	*new_node;
+	void	*content;
 
-	ft_memmove(dest, source, sizeof(char) * 10 + 1);
-	printf("%s", dest);
-
-	return (0);
-}*/
-
-void	*ft_memmove(void *dest, const void *src, size_t n)
-{
-	unsigned char	*d;
-	unsigned char	*s;
-
-	if (!dest && !src)
+	if (!lst || !f || !del)
 		return (NULL);
-	d = (unsigned char *)dest;
-	s = (unsigned char *)src;
-	if (d > s)
+	new_list = NULL;
+	while (lst)
 	{
-		while (n--)
-			d[n] = s[n];
+		content = f(lst -> content);
+		new_node = ft_lstnew(content);
+		if (!new_node)
+		{
+			del(content);
+			ft_lstclear(&new_list, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&new_list, new_node);
+		lst = lst -> next;
 	}
-	else
-	{
-		ft_memcpy(d, s, n);
-	}
-	return (dest);
+	return (new_list);
 }

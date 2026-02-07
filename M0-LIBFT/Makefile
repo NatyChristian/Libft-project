@@ -6,7 +6,7 @@
 #    By: jmbolana <jmbolana@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/01 11:07:57 by jmbolana          #+#    #+#              #
-#    Updated: 2026/02/07 16:30:37 by jmbolana         ###   ########.fr        #
+#    Updated: 2026/02/07 18:41:48 by jmbolana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,9 @@ SRC = ft_atoi.c\
 	  ft_lstadd_front.c\
 	  ft_lstclear.c
 	  ft_lstdelone\
+	  ft_lstiter.c\
+	  ft_lstlast.c\
+	  ft_lstmap.c\
       ft_lstnew.c\
       ft_memchr.c\
       ft_memcmp.c\
