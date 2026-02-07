@@ -6,7 +6,7 @@
 /*   By: jmbolana <jmbolana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/31 08:02:19 by jmbolana          #+#    #+#             */
-/*   Updated: 2026/02/07 21:28:00 by jmbolana         ###   ########.fr       */
+/*   Updated: 2026/02/07 23:15:04 by jmbolana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ char				*ft_strrchr(const char *s, int c);
 char				*ft_strjoin(const char *s1, const char *s2);
 char				*ft_strtrim(char const *s1, char const *set);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
+char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void				*ft_calloc(size_t nmemb, size_t size);
 void				*ft_memchr(const void *s, int c, size_t n);
 void				*ft_memcpy(void *dest, const void *src, size_t n);

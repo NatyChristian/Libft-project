@@ -6,7 +6,7 @@
 #    By: jmbolana <jmbolana@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/07 21:55:36 by jmbolana          #+#    #+#              #
-#    Updated: 2026/02/07 22:00:22 by jmbolana         ###   ########.fr        #
+#    Updated: 2026/02/07 23:20:20 by jmbolana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,7 +61,7 @@ OBJ = $(SRC:.c=.o)
 HEADERS = "libft.h"
 
 all: $(NAME)
-$(NAME): $(OBJ) $(SRC)
+$(NAME): $(OBJ) $(HEADERS)
 	ar -rcs $@ $^
 clean:
 	$(RM) $(OBJ)
