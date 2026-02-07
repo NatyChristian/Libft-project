@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: jmbolana <jmbolana@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2026/02/01 11:07:57 by jmbolana          #+#    #+#              #
-#    Updated: 2026/02/07 21:23:03 by jmbolana         ###   ########.fr        #
+#    Created: 2026/02/07 21:55:36 by jmbolana          #+#    #+#              #
+#    Updated: 2026/02/07 22:00:22 by jmbolana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
+NAME = "libft.a"
 
 SRC = ft_atoi.c\
       ft_bzero.c\
@@ -21,13 +21,13 @@ SRC = ft_atoi.c\
       ft_isdigit.c\
       ft_isprint.c\
       ft_itoa.c\
-      ft_lstadd_back.c\
-      ft_lstadd_front.c\
-      ft_lstclear.c\
-      ft_lstdelone.c\
-      ft_lstiter.c\
-      ft_lstlast.c\
-      ft_lstmap.c\
+	  ft_lstadd_back.c\
+	  ft_lstadd_front.c\
+	  ft_lstclear.c\
+	  ft_lstdelone.c\
+	  ft_lstiter.c\
+	  ft_lstlast.c\
+	  ft_lstmap.c\
       ft_lstnew.c\
       ft_memchr.c\
       ft_memcmp.c\
@@ -53,24 +53,19 @@ SRC = ft_atoi.c\
       ft_strtrim.c\
       ft_substr.c\
       ft_tolower.c\
-      ft_toupper.c
+	  ft_toupper.c
 
-OBJ = $(SRC:.c=.o)
-HEADERS = libft.h
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
+OBJ = $(SRC:.c=.o)
+HEADERS = "libft.h"
 
 all: $(NAME)
-
-$(NAME): $(OBJ) $(HEADERS)
+$(NAME): $(OBJ) $(SRC)
 	ar -rcs $@ $^
-
 clean:
-	rm -f $(OBJ)
-
+	$(RM) $(OBJ)
 fclean: clean
-	rm -f $(NAME)
-	
+	$(RM) $(NAME)
 re: fclean all
-
-.PHONY:	all clean fclean re 
+.PHONY: all clean fclean re
